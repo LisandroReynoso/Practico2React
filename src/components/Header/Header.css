@@ -1,0 +1,15 @@
+.imageheader { 
+    width: 50px; /* Ancho de la imagen de 100 píxeles */
+    height: auto; /* Altura automática para mantener la proporción */   
+}
+
+.HeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 70px;
+
+}
+
+.HeaderTitle > h1 {
+    font-family: "Montserrat", sans-serif;
+}
