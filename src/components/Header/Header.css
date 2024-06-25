@@ -7,9 +7,57 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 70px;
+    align-items: center;
 
+}
+
+.HeaderTitle {
+    display: flex;
+    align-items: center;
+
+}
+
+.HeaderTitle > img{
+    margin-right: 5px;
 }
 
 .HeaderTitle > h1 {
     font-family: "Montserrat", sans-serif;
+}
+
+.HeaderNavigation {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.HeaderNavigation > a {
+    text-decoration: none;
+    font-weight: 500px;
+    font-size: 16px;
+    color: black;
+
+}
+
+.HeaderNavigation > a:hover {
+    color: rgb(110, 110, 110);
+}
+
+.HeaderIconsLinks {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    
+}
+
+.HeaderIconsLinks > a {
+    color: black;
+    font-size: 16px;
+}
+
+.HeaderIconsLinks > a > svg {
+    width: 30px;
+}
+.HeaderIconsLinks > a:hover { 
+    color: rgb(110, 110, 110);
 }

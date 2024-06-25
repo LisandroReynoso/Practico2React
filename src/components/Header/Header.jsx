@@ -13,7 +13,7 @@ function Header() {
             <img className='imageheader' src={logoicon} alt="logo icon" />
             <h1>Destiny</h1>
         </div>
-        <nav>
+        <nav className="HeaderNavigation">
 
             <a href="">Home</a>
             <a href="">Shop</a>
