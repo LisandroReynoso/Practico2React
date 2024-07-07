@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person"
 import SearchIcon from "@mui/icons-material/Search"
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import { Link } from "react-router-dom"
 
 
 function Header() { 
@@ -15,16 +16,16 @@ function Header() {
         </div>
         <nav className="HeaderNavigation">
 
-            <a href="">Home</a>
-            <a href="">Shop</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/shop"}>Shop</Link>
+            <Link to={"/"}>About</Link>
+            <Link to={"/"}>Contact</Link>
         </nav>
         <div className='HeaderIconsLinks'>
-           <a href=""><PersonIcon /></a>
-           <a href=""><SearchIcon /></a>
-           <a href=""><FavoriteBorderIcon /></a>
-           <a href=""><ShoppingCartIcon /></a>
+           <Link to={"/"}><PersonIcon /></Link>
+           <Link to={"/"}><SearchIcon /></Link>
+           <Link to={"/"}><FavoriteBorderIcon /></Link>
+           <Link to={"/cart"}><ShoppingCartIcon /></Link>
         </div>
     </header>
     )
