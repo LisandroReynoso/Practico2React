@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import ProductsListContainer from "./components/ProductsListContainer/ProductsListContainer"
 import Cart from "./components/Cart/Cart"
 import ProductsProvider from "./context/productContext"
+import ProductDetailContainer from "./components/ProductDetailContainer/ProductDetailContainer"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
          <Route path="/shop" element={<ProductsListContainer/>} />
          <Route path="/cart" element={<Cart />} />
          <Route path="/" element={<ProductsListContainer/>} />
+         <Route path="/product/:productId" element={<ProductDetailContainer/>} />
             
 
         </Routes>
