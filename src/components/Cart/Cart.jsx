@@ -1,7 +1,11 @@
+import { useCartContext } from "../../context/cartContext"
+import CartTable from "../CartTable/CartTable"
 import "./Cart.css"
 
 function Cart() {
-    return <h1>Cart</h1>
+    const { cart } = useCartContext() 
+    return <div>
+        <CartTable />
+    </div> 
 }
-
 export default Cart

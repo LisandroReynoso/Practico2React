@@ -1,0 +1,46 @@
+.CartTable > thead  {
+    background-color: aquamarine;
+
+}
+.CartTable {
+    border-spacing: 0;
+}
+
+.CartTable > thead > tr > td {
+    padding: 15px 50px 15px 0;
+    font-weight: 600;
+}
+
+.CartTableItem > td {
+    padding-top: 40px;
+    padding-right: 30px;
+}
+
+.CartTableItem > tr > td > img {
+    margin-left: 40px
+    
+}
+
+.CartTableImg {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.CartTableCounterContainer {
+    
+  
+     
+}
+
+.FinalizarTable {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para que se ajuste al contenido */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave al pasar el mouse */
+}

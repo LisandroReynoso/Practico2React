@@ -53,6 +53,8 @@
 .HeaderIconsLinks > a {
     color: black;
     font-size: 16px;
+    text-decoration: none;
+    position: relative;
 }
 
 .HeaderIconsLinks > a > svg {
@@ -60,4 +62,10 @@
 }
 .HeaderIconsLinks > a:hover { 
     color: rgb(110, 110, 110);
+}
+
+.CartIconItemCount {
+    position: absolute;
+    top: -10px;
+    right: 0;
 }

@@ -2,7 +2,8 @@ import { Await, useParams } from "react-router-dom";
 import "./ProductDetailContainer.css"
 import { useEffect, useState } from "react";
 import { useProductsContext } from "../../context/productContext";
-
+import ProductDetail from "../ProductDetail/ProductDetail";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 function ProductDetailContainer() {
     const { getProductById } = useProductsContext();
@@ -18,19 +19,36 @@ function ProductDetailContainer() {
       getById();
     }, []);
 
+    return (
+        <div className='ProductDetailContainer'>
+            <div className="ProductDetailNavigation">
+                <p>
+                    Home
+                    <ArrowForwardIosIcon/>
+                </p>
+                <p>
+                    Shop
+                    <ArrowForwardIosIcon/>
+                </p>
+                
+                <p className="ProductDetailNavigationProducts">{product && product.title}</p>
+            </div>
 
-    return <div>
-        {!product ? <section class="dots-container">
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-</section>
-: <h1>{product.title}</h1>}
+      {!product ? (
+        <div class='loader'>
+          <div class='circle'></div>
+          <div class='circle'></div>
+          <div class='circle'></div>
+          <div class='circle'></div>
+        </div>
+      ) : (
+        <ProductDetail product={product} />
+      )}
     </div>
-
-
+  );
 }
 
 export default ProductDetailContainer;
+
+
+

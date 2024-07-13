@@ -5,9 +5,13 @@ import SearchIcon from "@mui/icons-material/Search"
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import { Link } from "react-router-dom"
+import { useCartContext } from "../../context/cartContext"
 
 
 function Header() { 
+    const {getTotalItems} = useCartContext()
+
+
     return( 
     <header className='HeaderContainer'>
         <div className='HeaderTitle'>
@@ -25,7 +29,10 @@ function Header() {
            <Link to={"/"}><PersonIcon /></Link>
            <Link to={"/"}><SearchIcon /></Link>
            <Link to={"/"}><FavoriteBorderIcon /></Link>
-           <Link to={"/cart"}><ShoppingCartIcon /></Link>
+           <Link to={"/cart"}>
+             <ShoppingCartIcon />
+             <span className="CartIconItemCount">{getTotalItems()}</span>
+           </Link>
         </div>
     </header>
     )

@@ -9,7 +9,7 @@ function ProductCard({product}) {
         <span>${product.price}</span>
         <div className="ProductCardHover">
             <div className="ProductCardHoverBack"></div>
-            <Link to={"/product/${product.id}"}>View Details</Link>
+            <Link to={`/product/${product.id}`}>View Details</Link>
         </div>
         
       </div>

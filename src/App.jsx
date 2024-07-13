@@ -6,6 +6,7 @@ import ProductsListContainer from "./components/ProductsListContainer/ProductsLi
 import Cart from "./components/Cart/Cart"
 import ProductsProvider from "./context/productContext"
 import ProductDetailContainer from "./components/ProductDetailContainer/ProductDetailContainer"
+import CartProvider from "./context/cartContext"
 
 
 function App() {
@@ -15,16 +16,18 @@ function App() {
 
     <BrowserRouter>
      <ProductsProvider>
-       <Header />
-        <Routes>
-         <Route path="/home" element={<ProductsListContainer/>} />
-         <Route path="/shop" element={<ProductsListContainer/>} />
-         <Route path="/cart" element={<Cart />} />
-         <Route path="/" element={<ProductsListContainer/>} />
-         <Route path="/product/:productId" element={<ProductDetailContainer/>} />
+      <CartProvider>
+        <Header />
+         <Routes>
+          <Route path="/home" element={<ProductsListContainer/>} />
+          <Route path="/shop" element={<ProductsListContainer/>} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<ProductsListContainer/>} />
+          <Route path="/product/:productId" element={<ProductDetailContainer/>} />
             
 
-        </Routes>
+         </Routes>
+      </CartProvider>
      </ProductsProvider>
       
      
