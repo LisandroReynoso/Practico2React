@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { collection, doc, getDoc, getDocs, Query, query, queryEqual, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 
@@ -8,37 +8,14 @@ export const useProductsContext = () => useContext(ProductsContext)
 
 function ProductsProvider({ children }) {
     const [products, setProducts] = useState([]);
+    const [count, setCount] = useState(0)
+    const [users, setUsers] = useState([{username: 'lisandro'}])
 
-
-    const getProducts = async (category = null) => {
-        try {
-          // traer datos de firestore
-    
-          // referencia a la collection sin filtro de categoria
-          const reference = collection(db, "products");
-    
-          // referencia con filtro de categoria
-          const referenceCategory = query(
-            collection(db, "products"),
-            where("category", "==", category)
-          );
-    
-          const querySnapshot = await getDocs(category ? referenceCategory : reference);
-    
-          const productsArray = [];
-    
-          querySnapshot.forEach((doc) => {
-            productsArray.push({
-              id: doc.id,
-              ...doc.data(),
-            });
-          });
-    
-          setProducts(productsArray);
-        } catch (error) {
-          console.error(error);
-        }
-      };
+      useEffect(()=> {
+        fetch('http://localhost:3000/api/users')
+          .then(response => response.json())
+          .then(data => setUsers(data.title))
+      }, [])
     
       const getProductById = async (id) => {
         const docReference = doc(db, "products", id);
